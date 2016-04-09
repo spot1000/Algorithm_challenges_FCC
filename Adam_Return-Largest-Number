@@ -1,0 +1,8 @@
+function largestOfFour(arr) {
+  var largest = [];
+  for (var i = 0; i < arr.length; i++) {
+    var test = arr[i].sort(function(a,b) {return b - a;});
+    largest.push(arr[i][0]);
+  }
+  return largest;
+}
