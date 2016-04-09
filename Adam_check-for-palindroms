@@ -1,0 +1,11 @@
+function palindrome(str) {
+  var newStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  var revStr = str.toLowerCase().replace(/[^a-z0-9]/g, "").split("").reverse().join("");
+  
+  if (newStr == revStr) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
