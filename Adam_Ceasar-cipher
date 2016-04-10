@@ -1,0 +1,21 @@
+function rot13(str) { 
+  
+  var rotate = str.split(" ");
+  for (var i = 0; i < rotate.length; i ++) {
+    rotate[i] = rotate[i].split("");
+    for (var q = 0; q < rotate[i].length; q++) {
+      rotate[i][q] = rotate[i][q].charCodeAt();
+      if (rotate[i][q] > 77) {
+        rotate[i][q] = String.fromCharCode(rotate[i][q] - 13); 
+      }
+      else if (rotate[i][q] < 65) {
+        rotate[i][q] = String.fromCharCode(rotate[i][q]);
+      }
+      else {
+        rotate[i][q] = String.fromCharCode((rotate[i][q] + 13));
+      }
+    }
+    rotate[i] = rotate[i].join("");
+  }
+  return rotate.join(" ");
+}
