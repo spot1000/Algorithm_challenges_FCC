@@ -1,0 +1,11 @@
+function mutation(arr) {
+  var sourceStr = arr[0].toLowerCase();
+  var checkStr = arr[1].toLowerCase();
+  
+  for (i = 0; i < arr[1].length; i++) {
+    if (sourceStr.indexOf(checkStr[i]) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
