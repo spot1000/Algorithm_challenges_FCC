@@ -1,0 +1,11 @@
+function destroyer(arr) {
+  var arg = arguments[0];
+  function seek(destroy) {
+    return destroy != compare;
+  }
+  for (var i = 0; i < arguments.length; i++) {
+    var compare = arguments[i];
+    arg = arg.filter(seek);
+  }
+  return arg; 
+}
