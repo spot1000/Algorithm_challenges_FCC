@@ -1,0 +1,13 @@
+function convertHTML(str) {
+  // &colon;&rpar;
+  
+  var amp = /&/g;
+  var lt = /</g;
+  var gt = />/g;
+  var quot = /"/g;
+  var apos = /'/g;
+  
+  return str.replace(amp, "&amp;").replace(lt, "&lt;").replace(gt, "&gt;").replace(quot, "&quot;").replace(apos, "&apos;");
+}
+
+convertHTML("Hamburgers < Pizza < Tacos");
