@@ -1,0 +1,21 @@
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  
+  function hyphonate(match) {
+    return "-" + match.toLowerCase();
+  }
+  
+  
+  var newstr = str.replace(/([A-Z])/g, hyphonate).replace(/(\s)([a-z])/g, hyphonate).replace(/(\s)|(["_"])/g, "");
+  
+  if (newstr[0] !== "-"){
+  return newstr;
+  }
+  else {
+    return newstr.slice(1, newstr.length);
+  }
+  
+}
+
+spinalCase('The_Andy_Griffith_Show');
