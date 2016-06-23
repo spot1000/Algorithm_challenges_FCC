@@ -1,0 +1,13 @@
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var mixed = arr1.concat(arr2);
+  for (var x = 0; x < mixed.length; x++) {
+    if (arr1.indexOf(mixed[x]) == -1 || arr2.indexOf(mixed[x]) == -1) {
+      newArr.push(mixed[x]);
+  }
+  }
+  // Same, same; but different.
+  return newArr;
+}
+
+diffArray([1, 2, 8, 3, 5], [1, 2, 3, 4, 5]);
