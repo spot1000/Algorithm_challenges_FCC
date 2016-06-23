@@ -1,0 +1,26 @@
+function sumFibs(num) {
+  
+  var fibsa = 0;
+  var fibsb = 1;
+  var container = 0;
+  var odds = 0;
+  
+  
+  
+  while (fibsb <= num) {
+    
+    if ((fibsb % 2) !== 0) {
+      odds = odds + fibsb;
+    }
+    
+    fibsa = fibsb;
+    fibsb = container + fibsb;
+    container = fibsa;
+    
+  }
+
+  
+  return odds;
+}
+
+sumFibs(75024);
