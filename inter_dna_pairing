@@ -1,0 +1,31 @@
+function pairElement(str) {
+  var newStr = str.split('');
+  var basePair =[];
+  
+  for (var x=0; x < newStr.length; x++) {
+    switch (newStr[x]) {
+      case "G":
+        basePair.push(['G','C']);
+        console.log(basePair);
+        break;
+      case "C":
+        basePair.push(['C','G']);
+        console.log(basePair);
+        break;
+      case "A":
+        basePair.push(["A","T"]);
+        console.log(basePair);
+        break;
+      case "T":
+        basePair.push(["T","A"]);
+        console.log(basePair);
+        break;
+      default:
+        return "something went wrong";
+    }
+  }
+  return basePair;
+}
+ 
+
+pairElement("GCG");
