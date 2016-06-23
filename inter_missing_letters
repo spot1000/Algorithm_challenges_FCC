@@ -1,0 +1,17 @@
+function fearNotLetter(str) {
+  
+  for (var x=1; x < str.length; x++) {
+    
+    var number1 = str[x].charCodeAt();
+    var number2 = str[x-1].charCodeAt();
+    var number3 = number1 - number2;
+    console.log(number1);
+    console.log(number2);
+    console.log(number3);
+    if (number3 == 2) {
+      return (String.fromCharCode(number1 - 1));
+    }
+  }
+}
+
+fearNotLetter("abce");
