@@ -1,0 +1,12 @@
+function myReplace(str, before, after) {
+  var correctAfter = after;
+  if (before[0] == before[0].toUpperCase()) {
+    var newAfter = after.split('');
+    newAfter[0] = newAfter[0].toUpperCase();
+    correctAfter = newAfter.join('');
+  }
+  var reg = new RegExp(before, "g");
+  return str.replace(reg, correctAfter);
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
