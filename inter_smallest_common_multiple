@@ -1,0 +1,30 @@
+function smallestCommons(arr) {
+  var min = Math.min(arr[0], arr[1]);
+  var max = Math.max(arr[0], arr[1]);
+  var testArr = [];
+  var counter = 0;
+  var bigNum = max;
+  
+  
+  for (var x = min; x <= max; x++) {
+    testArr.push(x);
+  }
+
+  while (counter < testArr.length) {
+    for (var q = min; q < max; q++) {
+      if (bigNum % q === 0) {
+        counter++;
+      }
+      else {
+        counter = 0;
+        bigNum += max;
+      }
+    }
+  }
+  
+  
+  
+  return bigNum;  
+}
+
+smallestCommons([1,5]);
