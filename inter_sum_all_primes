@@ -1,0 +1,26 @@
+function sumPrimes(num) {
+  var primeArr = [];
+  var count = 0;
+  
+  
+  function isPrime (number) {
+  var sqrt = Math.sqrt(number);
+  for (var x = 2; x <= sqrt; x++) {
+    if (number % x === 0) {
+      return false;
+    }
+  }
+  primeArr.push(number);
+  }
+  
+  for (var q = 2; q <= num; q++){
+  isPrime(q);
+  }
+  
+  function sum(a,b) {
+    return a + b;
+  }
+return primeArr.reduce(sum);
+}
+
+sumPrimes(10);
