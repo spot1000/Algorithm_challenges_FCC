@@ -1,0 +1,21 @@
+function translatePigLatin(str) {
+  var vowels = ["a","e","i","o","u"];
+  var vowelRegExp = new RegExp(/[a,e,i,o,u]/, "g");
+  var newStr;
+  if (vowels.indexOf(str[0]) >= 0) {
+    return str+"way";
+    }
+  
+  else {
+    var regLength = str.split(vowelRegExp, 1)[0].length;
+    var strArr = str.split("");
+    for (var x=0;x<regLength;x++) {
+      strArr.push(strArr[0]);
+      strArr.shift();
+    }
+    return strArr.join("") + "ay";
+  }
+  
+}
+
+translatePigLatin("california");
