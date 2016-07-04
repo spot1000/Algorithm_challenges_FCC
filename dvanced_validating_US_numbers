@@ -1,0 +1,46 @@
+
+function telephoneCheck(str) {
+  var reg = new RegExp(/\D/g);
+  var numbers = str.replace(reg, "");
+  var par = function(num) {
+    var parOpen = new RegExp(/[(]/g);
+    var parClosed = new RegExp(/[)]/g);
+    var checkClosed = num.search(parOpen) + 4;
+    console.log(checkClosed);
+    
+    if (num.lastIndexOf("(") > 2) {
+      return false;
+    } 
+    else {        
+    if (num.search(parClosed) !== -1 || num.search(parOpen) !== -1) {
+    
+    if (num.search(parOpen) !== -1 && checkClosed == num.search(parClosed)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+    }else {
+      return true;
+    }}
+  }; 
+  if (numbers.length === 11) {
+    if (numbers[0] == 1 && par(str)) {
+      return true;
+    }
+    else {
+      return false;
+    }    
+  }
+  if (numbers.length === 10) {
+    if (par(str)) {
+      return true;
+    }
+    
+  }
+
+  // Good luck!
+  return false; 
+}
+
+telephoneCheck("(555)5(55?)-5555");
